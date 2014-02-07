@@ -1,12 +1,19 @@
 # Opengraph
 
-Yii component to store and render opengraph tags.
+Yii component to store and render [opengraph](http://ogp.me/) tags.
 
 ## Why
 
 * You can make only first/last occurance of metatag to be rendered.
 * It converts image links to absolute.
 * You'll white it anyway.
+
+## Supported tags
+
+* og:title
+* og:url
+* og:description
+* og:image
 
 ## Installing
 

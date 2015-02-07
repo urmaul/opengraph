@@ -1,0 +1,21 @@
+{
+    "name": "urmaul/yii-opengraph",
+    "type": "library",
+    "description": "Yii component to store and render opengraph tags.",
+    "keywords": ["yii", "opengraph"],
+    "homepage": "https://github.com/urmaul/opengraph",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bogdan Kolbik"
+        }
+    ],
+    "require": {
+        "yiisoft/yii": "~1.1.15"
+    },
+    "autoload": {
+        "classmap": [
+            "Opengraph.php"
+        ]
+    }
+}

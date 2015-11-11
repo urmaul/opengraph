@@ -6,6 +6,16 @@
 class Opengraph extends CApplicationComponent
 {
     /**
+     * @var string The type of your object, e.g., "video.movie". Depending on the type you specify, other properties may also be required.
+     * @link http://ogp.me/#types
+     */
+    public $type = 'website';
+    /**
+     * @var string If your object is part of a larger web site, the name which should be displayed for the overall site. e.g., "IMDb".
+     * @link http://ogp.me/#types
+     */
+    public $site_name;
+    /**
      * @var string
      */
     public $title;
@@ -33,6 +43,12 @@ class Opengraph extends CApplicationComponent
     public function flush()
     {
         $clientScript = Yii::app()->clientScript;
+
+        if ($this->type !== null)
+            $clientScript->registerMetaTag($this->type, 'og:type');
+            
+        if ($this->site_name !== null)
+            $clientScript->registerMetaTag($this->site_name, 'og:site_name');
 
         if ($this->title !== null)
             $clientScript->registerMetaTag($this->title, 'og:title');

@@ -32,6 +32,13 @@ class Opengraph extends CApplicationComponent
      */
     protected $image;
 
+    public function init()
+    {
+        parent::init();
+        
+        $this->site_name = Yii::app()->name;
+    }
+
     public function setImage($image, $rewrite = true)
     {
         if ($rewrite || $this->image === null)

@@ -60,8 +60,12 @@ class Opengraph extends CApplicationComponent
         if ($this->title !== null)
             $clientScript->registerMetaTag($this->title, 'og:title');
 
-        if ($this->url !== null)
-            $clientScript->registerMetaTag($this->url, 'og:url');
+        if ($this->url !== null) {
+			$url = $this->url;
+			if (strpos($url, '/') === 0)
+                $url = Yii::app()->getRequest()->getHostInfo() . $url;
+            $clientScript->registerMetaTag($url, 'og:url');
+		}
 
         if ($this->description !== null)
             $clientScript->registerMetaTag($this->description, 'og:description');
